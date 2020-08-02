@@ -39,6 +39,7 @@ for v_host in content_folder_size:
 	for backup in backup_file_size_dict:
 		if backup.startswith(v_host + '.') and backup_file_size_dict[backup] > content_folder_size[v_host]*80/100: # 80%
 			print("\033[91m {}\033[00m".format('WARNING!!!'))
-			print(v_host, "size =", content_folder_size[v_host], "Bytes", "less than", backup, "size =",
+			out = (v_host, "size =", content_folder_size[v_host], "Bytes", "less than", backup, "size =",
 				  backup_file_size_dict[backup], "Bytes")
-
+			for i in out:
+				print(i, end=' ')
